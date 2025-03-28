@@ -71,35 +71,97 @@ The project is organized into two main directories: `frontend` and `backend`.
 
 ```plaintext
 /frontend
-    ├── auth
-    │   └── auth.js
-    ├── bin
-    │   └── www
-    ├── controllers
-    │   └── uc.js
-    ├── models
-    │   └── uc.js
-    ├── routes
-    │   └── ucs.js
-    ├── app.js
-    ├── Dockerfile
-    ├── Dockerfile-seed
-    ├── ucs.json
-    ├── users.json
-    └── package.json
+    ├── public                     # Contains static files like `index.html`
+    │   └── index.html
+    │   └── logo.png
+    │   └── robots.txt
+    ├── src                        # Contains the main application code.
+    │   ├── components             # Reusable React components (e.g., `Header`, `Footer`, `Product`, `Loader`, etc.).
+    │   │   └── CheckoutSteps.js
+    │   │   └── Footer.js
+    │   │   └── FormContainer.js
+    │   │   └── Header.js
+    │   │   └── Loader.js
+    │   │   └── Message.js
+    │   │   └── Paginate.js
+    │   │   └── Product.js
+    │   │   └── ProductCarousel.js
+    │   │   └── Rating.js
+    │   │   └── SearchBox.js
+    │   ├── mocks                 # Mock API calls for testing purposes.
+    │   │   └── cart.js
+    │   │   └── order.js
+    │   │   └── product.js
+    │   │   └── user.js
+    │   ├── redux                 # Redux slices and store configuration for state management.
+    │   │   ├── slices
+    │   │   │   └── cartSlice.js
+    │   │   │   └── rderSlice.js
+    │   │   │   └── productSlice.js
+    │   │   │   └── userSlice.js
+    │   │   ├── store
+    │   │   │   └── rootReducer.js
+    │   │   │   └── store.js
+    │   ├── screens               # Different screens of the application (e.g., `HomeScreen`, `LoginScreen`, `CartScreen`, etc.).
+    │   │   └── CartScreen.js
+    │   │   └── HomeScreen.js
+    │   │   └── LoginScreen.js
+    │   │   └── OrderScreen.js
+    │   │   └── PaymentScreen.js
+    │   │   └── PlaceOrderScreen.js
+    │   │   └── ProductScreen.js
+    │   │   └── ProfileScreen.js
+    │   │   └── RegisterScreen.js
+    │   │   └── ShippingScreen.js
+    │   └── App.css
+    │   └── App.js               # Main application component that sets up routing.
+    │   └── App.test.js
+    │   └── bootstrap.min.js
+    │   └── index.css
+    │   └── index.js             # Entry point for the React application.
+    ├── package-lock.json
+    ├── package.json
 
 /backend
-    ├── api
-    │   └── auth.js
-    ├── backend
-    │   └── www
-    ├── models
-    │   └── user.js
-    ├── routes
-    │   └── index.js
-    ├── app.js
-    ├── Dockerfile
-    └── package.json
+    ├── api                      # Contains the Django app for handling API requests.
+    │   ├── migrations           # Database migrations for the models.
+    │   ├── urls                 # URL routing for the API endpoints.
+    │   │   └── order_url.py
+    │   │   └── product_url.py
+    │   │   └── user_url.py
+    │   ├── views                # Contains the logic for handling requests and responses.
+    │   │   └── order_view.py
+    │   │   └── product_view.py
+    │   │   └── user_view.py
+    │   └── __init__.py
+    │   └── admin.py
+    │   └── apps.py
+    │   └── models.py            # Defines the database models for products, orders, and users.
+    │   └── serializers.py       # Serializes data for API responses.
+    │   └── signals.py
+    │   └── tests.py
+    ├── backend                  # Contains the main Django project settings and configuration.
+    │   └── __init__.py
+    │   └── asgi.py              # Entry point for ASGI-compatible web servers.
+    │   └── settings.py          # Configuration settings for the Django project.
+    │   └── urls.py              # URL routing for the Django application.
+    │   └── wsgi.py              # Entry point for WSGI-compatible web servers.
+    ├── staticfiles
+    │   ├── admin
+    │   │   ├── css
+    │   │   ├── fonts
+    │   │   ├── img
+    │   │   ├── js
+    │   ├── rest_framework
+    │   │   ├── css
+    │   │   ├── docs
+    │   │   ├── fonts
+    │   │   ├── img
+    │   │   ├── js
+    ├── manage.py
+    ├── Procfile
+    ├── requirements.txt
+    └── runtime.txt
 ```
 
 ## Conclusion
