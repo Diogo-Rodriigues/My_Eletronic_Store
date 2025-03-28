@@ -69,28 +69,38 @@ Before you begin, ensure you have met the following requirements:
 ## Project Structure
 The project is organized into two main directories: `frontend` and `backend`.
 
-### Frontend (`frontend`)
-- **public/**: Contains static files like `index.html`, images, and the `robots.txt` file.
-- **src/**: Contains the main application code.
-  - **components/**: Reusable React components (e.g., `Header`, `Footer`, `Product`, `Loader`, etc.).
-  - **screens/**: Different screens of the application (e.g., `HomeScreen`, `LoginScreen`, `CartScreen`, etc.).
-  - **redux/**: Redux slices and store configuration for state management.
-  - **mocks/**: Mock API calls for testing purposes.
-  - **App.js**: Main application component that sets up routing.
-  - **index.js**: Entry point for the React application.
+```plaintext
+/frontend
+    ├── auth
+    │   └── auth.js
+    ├── bin
+    │   └── www
+    ├── controllers
+    │   └── uc.js
+    ├── models
+    │   └── uc.js
+    ├── routes
+    │   └── ucs.js
+    ├── app.js
+    ├── Dockerfile
+    ├── Dockerfile-seed
+    ├── ucs.json
+    ├── users.json
+    └── package.json
 
-### Backend (`backend`)
-- **api/**: Contains the Django app for handling API requests.
-  - **models.py**: Defines the database models for products, orders, and users.
-  - **views/**: Contains the logic for handling requests and responses.
-  - **urls/**: URL routing for the API endpoints.
-  - **serializers.py**: Serializes data for API responses.
-  - **migrations/**: Database migrations for the models.
-- **backend/**: Contains the main Django project settings and configuration.
-  - **settings.py**: Configuration settings for the Django project.
-  - **urls.py**: URL routing for the Django application.
-  - **wsgi.py**: Entry point for WSGI-compatible web servers.
-  - **asgi.py**: Entry point for ASGI-compatible web servers.
+/backend
+    ├── api
+    │   └── auth.js
+    ├── backend
+    │   └── www
+    ├── models
+    │   └── user.js
+    ├── routes
+    │   └── index.js
+    ├── app.js
+    ├── Dockerfile
+    └── package.json
+```
 
 ## Conclusion
 This project serves as a comprehensive e-commerce solution, showcasing the integration of React and Django. Feel free to contribute or modify the project as per your needs.
