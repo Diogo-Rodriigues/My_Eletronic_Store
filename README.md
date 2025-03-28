@@ -13,10 +13,10 @@ My Electronic Store is a full-stack e-commerce application built using React for
 
 ## Prerequisites
 Before you begin, ensure you have met the following requirements:
-- Python 3.x installed
+- Python 3.10 installed
 - Node.js and npm installed
 - Django and Django REST Framework installed
-- PostgreSQL or SQLite for the database (if using PostgreSQL, ensure you have it installed and running)
+- SQLite for the database
 
 ## Installation Process
 1. **Clone the repository:**
@@ -30,17 +30,22 @@ Before you begin, ensure you have met the following requirements:
      ```bash
      cd backend
      ```
-   - Create a virtual environment:
+   - Create a virtual environment with python 3.10:
      ```bash
-     python -m venv venv
-     source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+     py -3.10 -m venv env
+     source env/bin/activate  # On Windows use `env\Scripts\activate`
      ```
    - Install the required packages:
      ```bash
      pip install -r requirements.txt
      ```
+   -Try to run the backend:
+     ```bash
+     python manage.py runserver
+     ```
    - Run migrations:
      ```bash
+     python manage.py makemigrations api
      python manage.py migrate
      ```
    - Create a superuser for the admin panel:
@@ -52,7 +57,7 @@ Before you begin, ensure you have met the following requirements:
      python manage.py runserver
      ```
 
-3. **Set up the frontend:**
+4. **Set up the frontend:**
    - Navigate to the frontend directory:
      ```bash
      cd ../frontend
